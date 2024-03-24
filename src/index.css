@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+    font-family: 'Oswald', sans-serif;
+}
+body {
+    color: #fff;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, rgb(247, 246, 246) 50%, rgb(240, 238, 235) 50%);
+    background-size: auto 64px;
+}
