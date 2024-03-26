@@ -1,7 +1,6 @@
 const AppFooter = () => (
     <>
-        <h1 className="text-center text-3xl">AppFooter</h1>
-        {/* TODO: AppFooter */}
+        <div className=" h-8 w-full bg-catalina-blue-300"></div>
     </>
 )
 export { AppFooter }

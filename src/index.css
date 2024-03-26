@@ -10,3 +10,12 @@ body {
     background: linear-gradient(to bottom, rgb(247, 246, 246) 50%, rgb(240, 238, 235) 50%);
     background-size: auto 64px;
 }
+.active {
+    color: chocolate;
+}
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

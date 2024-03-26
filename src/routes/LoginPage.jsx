@@ -1,7 +1,6 @@
+import AuthProvider from "../components/common/AuthProvider"
+
 const LoginPage = () => (
-    <>
-        <h1 className="text-center text-3xl">LoginPage</h1>
-        {/* TODO: LoginPage */}
-    </>
+        <AuthProvider />
 )
 export { LoginPage }
