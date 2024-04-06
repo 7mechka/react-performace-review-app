@@ -1,10 +1,8 @@
-import AppRadio from './AppRadio'
-
 const AppButton = ({ text, onClick, onSubmit, type }) => {
     const solid =
-        'bg-catalina-blue-600 hover:bg-catalina-blue-500 duration-200 rounded-full px-10 py-3 text-center text-gray-50 shadow-lg font-semibold tracking-wide'
+        'bg-catalina-blue-600 hover:bg-catalina-blue-500 duration-200 rounded-full px-7 py-3 text-center text-gray-50 shadow-lg font-semibold tracking-wide'
     const white =
-        'text-catalina-blue-500 hover:bg-gray-50 duration-200 rounded-full bg-white px-10 py-3 text-center font-semibold tracking-wide shadow-lg'
+        'text-catalina-blue-500 hover:bg-gray-50 duration-200 rounded-full bg-white px-7 py-3 text-center font-semibold tracking-wide shadow-lg'
     const submit =
         'flex h-7 w-7 items-center justify-center rounded-full border border-catalina-blue-300 bg-white hover:border-catalina-blue-500 duration-200'
     const clickHandler = (e) => {

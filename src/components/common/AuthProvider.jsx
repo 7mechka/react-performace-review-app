@@ -1,16 +1,14 @@
-import { useContext } from 'react'
 import AppButton from '../forms/AppButton'
 import {
     GithubAuthProvider,
     GoogleAuthProvider,
     signInWithPopup,
 } from 'firebase/auth'
-import { Context } from '../../main'
+import { auth } from '../../main'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useNavigate } from 'react-router-dom'
 
 const AuthProvider = () => {
-    const { auth } = useContext(Context)
     const [user] = useAuthState(auth)
     const GoogleProvider = new GoogleAuthProvider()
     const GitProvider = new GithubAuthProvider()
@@ -28,7 +26,7 @@ const AuthProvider = () => {
         <>
             {user != null ? navigate('/') : (
                 <div className="flex items-center justify-center">
-                    <div className="flex h-auto w-auto flex-col items-center justify-center gap-10 rounded-xl bg-catalina-blue-300 p-10">
+                    <div className="flex h-auto w-auto flex-col items-center justify-center gap-5">
                         <AppButton
                             onClick={() => startLogin('google')}
                             text={'Login with Google'}

@@ -1,11 +1,15 @@
-const AppCheckbox = () => (
+const AppCheckbox = ({ name, id, checked, cb }) => (
     <div className="flex">
         <input
             type="checkbox"
-            className="border-catalina-blue-500 peer relative mt-1 h-4 w-4 shrink-0 cursor-pointer
-                    appearance-none rounded-sm border-2
+            className="peer relative mt-1 h-4 w-4 shrink-0 cursor-pointer appearance-none
+                    rounded-sm border-2 border-catalina-blue-500
                     bg-white focus:outline-none
-                    focus:ring-1 focus:ring-blue-100 focus:ring-offset-0"
+                    "
+            value={name}
+            id={id}
+            checked={checked}
+            onChange={cb}
         />
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +24,7 @@ const AppCheckbox = () => (
             />
         </svg>
         <svg
-            className="bg-catalina-blue-600 pointer-events-none absolute mt-1 hidden h-4 w-4 rounded-sm stroke-white outline-none peer-checked:block"
+            className="pointer-events-none absolute mt-1 hidden h-4 w-4 rounded-sm bg-catalina-blue-600 stroke-white outline-none peer-checked:block"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="none"
@@ -31,6 +35,9 @@ const AppCheckbox = () => (
         >
             <polyline points="20 6 9 17 4 12"></polyline>
         </svg>
+        <label htmlFor={id} className="ml-2">
+            {name}
+        </label>
     </div>
 )
 

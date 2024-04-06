@@ -4,8 +4,10 @@ import './index.css'
 import { BrowserRouter } from 'react-router-dom'
 import PageRouter from './PageRouter.jsx'
 import { initializeApp } from 'firebase/app'
-import { GoogleAuthProvider, getAuth } from 'firebase/auth'
-// import firebase from "firebase"
+import { getAuth } from 'firebase/auth'
+import { getFirestore } from 'firebase/firestore'
+import { Provider } from 'react-redux'
+import store from './state/store'
 
 const app = initializeApp({
     apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -21,13 +23,12 @@ const app = initializeApp({
     appId: '1:1002900095159:web:1860d9970c1cb41ef9cd32',
 })
 export const auth = getAuth(app)
-export const provider = new GoogleAuthProvider()
-export const Context = createContext(null)
+export const db = getFirestore(app)
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-        <BrowserRouter>
-            <Context.Provider value={{ auth }}>
-                <PageRouter />
-            </Context.Provider>
-        </BrowserRouter>
+    <BrowserRouter>
+        <Provider store={store}>
+            <PageRouter />
+        </Provider>
+    </BrowserRouter>
 )
